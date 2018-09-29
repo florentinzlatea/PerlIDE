@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Open Perl IDE - User Manual</title>
+</head>
+
+<body background="back.gif">
+
+
+<center>
+<table width="600">
+
+<tr>
+	<td>
+	<hr>
+	<big>Open Perl IDE - User Manual</big>
+	<small><br> Version 0.9.8.168a</small>
+	<hr>
+	<br>
+	<b><big><big>2 Environment</big></big></b><br>
+	<br>
+	<b><big>2.1 File Handling</big></b><br>
+	<br>
+	Open Perl IDE is an MDI application, that means, it is possible to open 
+	multiple editor windows.<br> 
+	<br>
+	<b>Important:<br>
+	There can be several different files opened, but only one window per file. 
+	Trying to open a file a second time does not create a new window - 
+	instead the existing window is activated to display the file.</b><br>
+	<br>
+	<table>
+		<tr>
+		In addition to default MDI behaviour, a Tab-Panel has been added:<br><br>
+		<td> 
+		This supports a fast activation of any opened window, even if there are 
+		many of them.</td>
+		<td><img src="tabs.gif" alt="tabs" width=421 height=79 border=0></td>
+		</tr>
+	</table><br><br>	
+	Here are some other features
+	<ul>
+	<li>DragDrop-Support: Files dropped on Open Perl IDE are opened.</li>
+	<li>ReadOnly files are opened in a greyed window.</li>
+	<li>
+		If an open file has been changed or deleted by another application, 
+		a message is shown, asking if the file shold be reload.<br>
+	</li>
+	</ul>
+	All file functions are listed in the following table:<br><br>
+	<b>Table 2-1: File functions</b><br>
+	<table width="100%" border=1>
+	  <tr><td width="15%"><b>Name</b></td><td width="15%"><b>Shortcut</b></td><td><b>Description</b></td></tr>
+	  <tr><td>New</td><td>CTRL-N</td><td>Open a new, empty editor window.</td></tr>
+	  <tr><td>Open</td><td>CTRL-O</td><td>Open a file in a new editor window.</td></tr>
+	  <tr><td>Save</td><td>CTRL-S</td><td>Save the current editor window under the corresponding filename.</td></tr>
+	  <tr><td>Save As</td><td>-</td><td>Save the current editor window under a new filename.</td></tr>
+	  <tr><td>Save All</td><td>-</td><td>Save all editor windows.</td></tr>
+	  <tr><td>Close</td><td>CTRL-F4</td><td>Close the current editor window.</td></tr>
+	  <tr><td>Close All</td><td>-</td><td>Close all editor windows.</td></tr>
+	</table>
+	<br>
+	<hr>
+	<br>
+	<b><big>2.2 Desktop Configuration</big></b><br>
+	<br>
+	In the current version of Open Perl IDE, the following windows are dockable:<br> 
+	<ul>
+	<li>Output windows:	Console and Error output.</li>
+	<li>Debug windows:	Breakpoints, CallStack, Variables and Modules.</li>
+	<li>The Help window</li>
+	</ul>
+	Each dockable window can be docked in one of the four docking areas around 
+	the editor window area. Each of these areas is sizeable. 
+	If windows are docked in an area, there are shown as tabs hosted by a page 
+	control. If the last window of a docking area has been removed, the hosting 
+	page control disappears. <br>
+	<br>
+	<font color="blue">
+	<b><i>Hint: Pressing CTRL when moving over an area prevents a window from being docked.<br></i></b>
+	</font>
+	<br>	
+	<b>Figure 2-1: Docking / editor areas and desktop combobox<br></b>
+	<img src="dockingareas.gif" alt="DockingAreas" width=600 height=454 border=0><br>
+	<br>
+	<br>
+	<ul>
+	<li><b>Define a new desktop<br></b> 
+    Move all dockable windows to the right positions, enter a name for the new 
+	desktop into the desktop combobox and press return.</li>
+	<br><br>
+	<li><b>Use another desktop as current desktop<br></b>
+	Select another desktop in the desktop combobox.</li>
+	<br><br>
+	<li><b>Save current desktop<br></b>
+	Move all dockable windows to the right positions and press return in the 
+	desktop combobox.</li> 
+	</ul>
+	<font color="blue">
+	<i><b>Hint: To associate a desktop with a program state, go to the preferences 
+	dialog, switch to general panel and set the desktops for default, 
+	run and debug states.<br>	
+	</b></i>	
+	</font>
+	<br>
+	<hr>	
+	<table align=right>
+	<tr>
+	   <td></td>
+	   <td align=right>
+	   <small>
+	   Open Perl IDE is copyright &copy; 2001 by <a href="mailto:jguentherodt@users.sourceforge.net">J&uuml;rgen G&uuml;ntherodt</a>.
+	   </small>
+	   </td>
+	   </tr>
+    </table>
+	</td>
+</tr>
+</table>
+</center>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Open Perl IDE - User Manual</title>
+</head>
+
+<body background="back.gif">
+
+
+<center>
+<table width="600">
+
+<tr>
+	<td>
+	<hr>
+	<big>Open Perl IDE - User Manual</big>
+	<small><br> Version 0.9.8.168a</small>
+	<hr>
+	<br>
+	<b><big><big>4 Script Execution</big></big></b><br>
+	<br>
+	<b><big>4.1 Project handling</big></b><br>
+	<br>
+	An Open Perl Project consists of one executable main script 
+	(with extension *.pl, *.plx, *.cgi) and several modules (with extension *.pm) 
+	which are used or required by the main script.<br>
+	<br>	
+	<b>Start parameter, Breakpoints and Variables are stored for each project separately.<br></b>
+	<br>
+	It is possible to open multiple executable scripts in Open Perl IDE, but 
+	there is always only one active project. 
+	The Project Menu (&quot;Project | Set active project&quot;) contains an enumeration 
+	of all open projects. To change the active project, select another one in 
+ 	the Project Menu or simply activate the corresponding editor window.<br> 		
+	<br>
+	<hr>
+	<br>
+	<b><big>4.2 Compile and run a script</big></b><br>
+	<br>
+	<b>Important: 
+	Open Perl IDE is not able to compile or run any scripts, if it does not know 
+	a path to &quot;perl.exe&quot;. If the PATH environment variable contains a 
+	valid location, then &quot;perl.exe&quot; will be detected automatically. 
+	Otherwise it is necessary to enter a valid location into 
+	<nobr>the &quot;Preferences | General | Directories | Path to perl.exe&quot; field.</nobr><br>    
+	</b>
+	<br>
+	Choose &quot;Run&quot; from the &quot;Run Menu&quot;, if you want to execute the active project.<br> 
+	Choose &quot;Compile&quot; from the &quot;Project Menu&quot; if you only want to check the 
+	active project for syntax errors but do not want to execute it.<br>
+	<br>
+	<font color="blue">
+	<i><b>Hint: You can also use shortcuts - Simply press F9 to run and CTRL-F9 to compile the active project !<br></b></i>
+	</font>
+	<br>
+	If the script writes something to STDOUT or STDERR, this data is shown in 
+	the output windows &quot;Console&quot; and &quot;Error Output&quot;. Both windows can be shown 
+	and hidden from the &quot;Window | Output window&quot; menu.<br>
+	<br>		
+    <b>Important: If the script reads input from STDIN, the execution is stopped 
+	until the necessary data has been entered in the &quot;Console&quot; window.<br></b>
+	<br>	
+	If there are some syntax errors, the script can not be executed, and all 
+	errors are shown in the &quot;Error Output&quot; window. To view the erroneous line 
+	in the appropriate editor window, double click the error message line.<br>
+	<br>
+	<b>Figure 4-1: Syntax Error<br></b>
+	<img src="syntaxerror.gif" alt="SyntaxError" width=567 height=421 border=0><br>
+	<br>
+	<hr>	
+	<table align=right>
+	<tr>
+	   <td></td>
+	   <td align=right>
+	   <small>
+	   Open Perl IDE is copyright &copy; 2001 by <a href="mailto:jguentherodt@users.sourceforge.net">J&uuml;rgen G&uuml;ntherodt</a>.
+	   </small>
+	   </td>
+	   </tr>
+    </table>
+  </td>
+</tr>
+</table>
+</center>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Open Perl IDE - User Manual</title>
+</head>
+
+<body background="back.gif">
+
+
+<center>
+<table width="600">
+
+<tr>
+	<td>
+	<hr>
+	<big>Open Perl IDE - User Manual</big>
+	<small><br> Version 0.9.8.168a</small>
+	<hr>
+	<br>
+	<b><big><big>6 Help System</big></big></b><br>
+	<br>
+	This section explains the concepts of the highly configurable Open Perl IDE 
+	help system.<br>
+	<br>
+	<b><big>6.1 Help Configuration</big></b><br>
+	<br>
+	The complete help data consists of several main help topics.
+	Each main help topic has a descriptive title, is associated with a base directory and  
+	<ul>
+	<li>its &quot;contents relevant data&quot; is defined as set of all files and directories located 
+	under the base directory, and</li>
+	<li>its &quot;keyword index relevant data&quot; is defined as set of all *.htm and *.html files 
+	located under the base directory.</li>
+	</ul>
+	<br>
+	These main help topics can be configured on the &quot;Preferences | Help&quot; page as follows:
+	<ul>
+	<li>A new help topic can be added by choosing &quot;Add Help Location&quot; from 
+	the listview popup menu and then selecting a base directory for the new help topic.</li>
+	<li>A selected help topic can be deleted by choosing 
+	&quot;Delete help location&quot; from the listview popup menu.</li>
+	<li>The priority of each topic can be changed by dragging it to a new position.</li> 
+	<li>Each line consists of several fields, each of these can be changed by a double click on it.
+		<ul> 
+		<li>The &quot;Base Directory&quot; field defines the location of the help files.</li>  
+		<li>The &quot;Contents&quot; field controls, if the &quot;contents relevant data&quot;
+			is used.</li> 
+		<li>The &quot;Keyword Index&quot; field controls, if the &quot;keyword index relevant data&quot; 
+			is used. </li>
+		</ul></li>
+	</ul>
+	For example, in the screenshot below, the complete Contents contains only the 
+	&quot;Open Perl IDE Documentation&quot;, and the Keyword Index is built 
+	only from the &quot;ActivePerl Documentation&quot; Topic.<br>
+	<br>
+	<b>Figure 6-1: Example Configuration of main help topics<br></b>
+	<img src="helpconfig.gif" alt="Help Configuration" width=491 height=434 border=0><br>
+	<br>	
+	<br>
+	<hr>
+	<br>
+	<b><big>6.2 Help Viewer</big></b><br>
+	<br>
+	You can open the help viewer by choosing Contents or Index from the Help 
+	Menu or by pressing F1 from within an editor window. The help viewer is a 
+	dockable window, however, the following screenshots show the help viewer in 
+	floating state as a stand alone window.<br>
+	<br>
+	<b>Figure 6-2: Help Viewer Contents page<br></b>
+	<img src="helpviewer_contents.gif" alt="HelpViewer Contents" width=590 height=304 border=0><br>
+	<br>
+	In the contents tree, Shell Links are automatically resolved to the source 
+	document. So it is possible to create an independent contents organization 
+	containing shortcuts to the original files.<br>
+	<br>
+	The next screenshot shows a typical help viewer, if the Perl command &quot;print&quot; has 
+	been typed into an editor window and then F1 has been pressed.<br>
+	<br>
+	<b>Figure 6-3: Help Viewer Index page<br></b>
+	<img src="helpviewer_index.gif" alt="HelpViewer Index" width=592 height=306 border=0><br>
+	<br>
+	If the help viewer has been opened from an editor window with F1, then 
+	the ESC - Key switches the focus back to the editor window.<br>
+	<br>
+	The keyword index is automatically rebuilt, if the help configuration has 
+	been changed:<br>
+	<br>
+	<b>Figure 6-4: Keyword index generation<br></b>
+	<img src="indexrebuild.gif" alt="Index Rebuild" width=589 height=304 border=0><br>
+	<br>
+	<br>
+	<hr>
+	<br>
+	<b><big>6.3 Help System Internals</big></b><br>
+	<br>
+	The keyword index generation consists of several steps:<br>
+	<br>
+	For each main topic
+	<ul>
+	<li>the base directory and its sub-directories are scanned and all 
+	*.htm and *.html files are written to a list which is saved to a file.</li><br>
+	<br>
+	<li>Then the keyword generation script MakeIDX.pl takes this file, 
+	parses each file in the list, extracts the keywords and writes it to an 
+	index file. </li>
+	</ul>
+	Finally, after creating index files for all relevant topics, an offset file 
+	is created to perform a fast access to all index files.<br>
+	<br>
+	<font color="blue">
+	<i><b>See the Open Perl IDE Software Design Specification for further information.<br></b></i>
+	</font>	
+	<br>
+	<hr>	
+	<table align=right>
+	<tr>
+	   <td></td>
+	   <td align=right>
+	   <small>
+	   Open Perl IDE is copyright &copy; 2001 by <a href="mailto:jguentherodt@users.sourceforge.net">J&uuml;rgen G&uuml;ntherodt</a>.
+	   </small>
+	   </td>
+	   </tr>
+    </table>
+	</td>
+</tr>
+</table>
+</center>
+
+</body>
+</html>

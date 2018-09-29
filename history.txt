@@ -1,0 +1,83 @@
+Open PerlIDE History
+-----------------------
+0.9.8.168 Help System, Debugger Script bugfixes, environment enhancements 
+-Help system implemented: Configurable Contents and Keyword-Index Help.
+-Scripts with *.plx, *.cgi extensions can be started within the IDE.
+-Bugfix: CTRL-Z did not work in Console Window - fixed.
+-Bugfix in Debugger Script. There has been some problems 
+(debugger hangs in endless loop) with OLE-Variants. 
+A try-block now in DB::sub encapsulates @_-join - seems to work.
+-Bugfix in Debugger Script: Breakpoints are not recognized, if the lib directive has been used to extend @INC - fixed.
+-Bugfix: If Open Perl IDE was not able to process a blocking Hint or Watch-Evaluation-Request during debugging, it was not possible to close the program. 
+-Bugfix: "Del" does not work on breakpoint window.
+-Bugfix: Debugger Script: Check $filename in ExpandFileName for beginning "(".
+-Optional initialization of text in search/replace dialogs with 
+the word under cursor/selection.
+-Actual cursor position in editor windows is saved.
+-Bugfix: If perl.exe does not exist in path, but is set properly in Preferences dialog, compile and debug mode work, but the run mode does not.
+-Start parameters are read correctly and saved for each project.
+-No more use of API-IniFile-Functions, so no more limitations.
+-Improved STDOUT and STDERR redirection: Better performance and \r support.
+-Start parameters are saved.
+-Bugfix: Fixed a Sync-Problem in Request-Processor: Redirected output may produce duplicate lines, if some reports from the debug script are processed concurently.
+
+0.9.7.121 Configuration storage and Perl Debugger Script bugfixes
+-Syntax Highlighting is now saved correctly.
+-Debugger Script Problems with uninitialized sockets during execution of BEGIN and END sections fixed.
+-Bugfix in CommandLine-Process-Handler: Now both, Process and Main-Thread handles are closed after command line process (=perl.exe) has terminated.
+
+0.9.6.115 Major bugfixes, environment and configuration enhancements
+-Current directory for script execution is now set on script-directory.
+-GoTo-Line-Bugfix: The valid line number is now in range from 1 to LineCount
+-ReadOnly and FileChange detection
+-Current program state is shown in status bar
+-Icons in Menu and Toolbar
+-Tooltips on Toolbar
+-Tab captions now contain the filenames without path
+-New commands "SaveAll" and "CloseAll" in Menu and Toolbar
+-Path to perl.exe configurable
+-Editor fonts and colors are configurable
+-Hint evaluation during debug mode can be toggled on and off.
+-Virtual space editor mode can be toggled on and off.
+
+0.9.5.87 Debug bugfixes
+-No more Timeouts on hint evaluation 
+-Callstack info corrected
+-Hint evaluation corrupts request processing, which causes lines and watches to not be updated correctly.
+-Breakpoint on first line is ignored
+-In debug mode, there is always a switching to the first code line, even in F9 mode.
+-There is always one and only one NewItem-placeholder in Watches-List.
+-All lists are now ElTrees.
+-No project change possible during debug session
+-Compile is disabled, if *.pm file is active and debugging is stopped.
+
+0.9.4.62 Persistent watch tree
+-Variable inspector (watch tree like in MSVC++)
+-Persistent watches
+-Use of ElTree-Components in Callstack-Window
+
+0.9.3.48 Debug and editor enhancements
+-FileOpen Action with STRG+Return-Shortcut
+-Changed passing of breakpint parameters to fully support conditional brakpoints.
+-Search, Replace, GotoLine-Dialogs added.
+
+0.9.2.40 Environment bugfixes and enhancements
+-Open files are listed in tab-control.
+-DragDrop support for files.
+-Bugfix: Saving of desktop includes window data of MDI children, causes temporary change of active file. 
+-Bugfix: It was possible, that on desktop-loading a non-vivible window is was focused. This problem is solved, because now the always visible desktop combobox is focused.
+-Improved performance on activation of first MDI child or change of actual MDI child.
+
+0.9.1.32 Conditional breakpoints
+-Conditional Breakpoints are implemented.
+
+0.9.0.21: Hint-Evaluation und Selection
+-Refresh-Problem fixed.
+
+0.9.0.20: Hint-Evaluation
+-Mouse-Over-Hint now shows content of array, hashes and classes.
+
+0.9.0.17: Bugfixes
+-It was not possible to close PerlIDE when executing from a read-only drive.
+-Writing to STDIN in edit-mode leads to GPF.
+-Run call on perl scripts with whitespaces in filename did not work.

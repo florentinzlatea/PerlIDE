@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Open Perl IDE - User Manual</title>
+</head>
+
+<body background="back.gif">
+
+
+<center>
+<table width="600">
+
+<tr>
+	<td>
+	<hr>
+	<big>Open Perl IDE - User Manual</big>
+	<small><br> Version 0.9.8.168a</small>
+	<hr>
+	<br>
+	<b><big><big>5 Script Debugging</big></big></b><br>
+	<br>
+	This section explains how to use Open Perl IDE for debugging.<br>
+	<br> 
+	<b>Important: 
+	Open Perl IDE is not able to debug any scripts, if it does not know 
+	a path to &quot;perl.exe&quot;. If the PATH environment variable contains a 
+	valid location, then &quot;perl.exe&quot; will be detected automatically. 
+	Otherwise it is necessary to enter a valid location into 
+	<nobr>the &quot;Preferences | General | Directories | Path to perl.exe&quot; field.</nobr><br>    
+	</b>
+	<br>	
+	There are two methods to debug a script:<br>
+	<ul>
+	<li>Set one or more breakpoints (as explained in section 5.1 Breakpoints) 
+	and run the script, which is executed until a breakpoint is reached.</li>
+	<li>Choose Step Over from the Run Menu. After the script and all required 
+	modules are loaded and initalized, the execution stops on the first line 
+	of non-initialization code.</li>
+	</ul>
+	After execution is stopped, it is possible to analyse the actual state of 
+	the script by<br>
+	<ul>
+	<li>Viewing Console Output, see section 4.2 Compile and Run a script</li>
+	<li>Evaluating some variables, see section 5.2 Variable Evaluation</li>
+	<li>Viewing the list of loaded modules, see section 5.3 Other debug windows</li>
+	<li>Viewing the callstack, see section 5.3 Other debug windows</li>
+	</ul>
+	Furthermore, it is possible to set/delete breakpoints 
+	(see section 5.1 Breakpoints) or to continue/abort the execution of the 
+	script. The following table shows the different navigation possibilities:<br>
+	<br>
+	<b>Table 5-1: Debug Navigation<br></b>
+	<table border=1>
+	  <tr><td width="15%"><b>Name</b></td><td width="15%"><b>Shortcut</b></td><td><b>Description</b></td></tr>
+	  <tr><td>Run</td><td>F9</td><td>Start/Continue script execution until next breakpoint is reached.</td></tr>
+	  <tr><td>Step Over</td><td>F8</td><td>Execute the current script line, not tracing into subroutines.</td></tr>
+	  <tr><td>Step Into</td><td>F7</td><td>Execute the next command in the current script line, tracing into subroutines.</td></tr>
+	  <tr><td>Abort</td><td>CTRL-F2</td><td>Abort debug session.</td></tr>
+	</table>
+	<br>
+	If script execution has finished, then Open Perl IDE automatically switches 
+	back from debug mode to edit mode.<br>
+	<br>
+	<hr>
+	<br>
+	<b><big>5.1 Breakpoints</big></b><br>
+	<br>
+	A breakpoint is a module/line/condition combination, defining a rule to stop 
+	script execution in debug mode.<br>
+	<br>
+	You can set or delete a breakpoint on a specific line by clicking on the 
+	line number. All breakpoints are listed in the Breakpoints window, which can 
+	be shown or hidden from &quot;Window | Debug windows&quot; menu.<br>
+	If you set a new breakpoint, the associated break condition is always true. 
+	If you do not want this behaviour, change the condition by double clicking, 
+	as shown in the following figure.<br>
+	<br>
+ 	<b>Figure 5-1: Change a breakpoint condition (left) and debug script (right)<br></b>
+	<img src="changebpcond.gif" alt="Change breakpoint condition" width=291 height=278 border=0>
+	<img src="debugscript.gif" alt="Debug script" width=296 height=278 border=0><br>
+	<br>
+	<hr>
+	<br>
+	<b><big>5.2 Variable Evaluation</big></b><br>
+	<br>
+	There are two methods to evaluate code in Open Perl IDE:<br>
+	<ul>
+	<li>Hint Evaluation: Move the mouse cursor over the variable / selection 
+	of interest. The code is immediately evaluated and be shown in a hint window.<br> 
+	This hint evaluation can be enabled or disabled in the &quot;Preferences | General&quot; tab.<br><br></li>
+	<li>Watch Tree: Select and drag the code of interest and drop it into the 
+	Variables window or double click the empty line in the watch tree and enter 
+	the code. The evaluation is immediately shown in a tree view.<br> 
+	All scalar values in this watch tree can be changed. To change a watch or 
+	a scalar value, simply double click on the corresponding field and enter the 
+	new value. The Variables window can be shown or hidden from 
+	the &quot;Window | Debug windows&quot; menu.</li>
+	</ul>
+	<font color="blue">
+	<i><b>Currently, code like 2*3 can not be directly evaluated in watch 
+	tree - use (2*3) instead.<br></b></i>
+	</font>
+	<br>
+	The following screenshot shows an example for both, hint evaluation and 
+	watch tree view of a circular nested data structures.<br>
+	<br>
+	<b>Figure 5-2: Hint Evaluation and Watch Tree<br></b>
+	<img src="hintwatchtree.gif" alt="Hint and WatchTree" width=591 height=584 border=0><br>
+	<font color="blue"><br>
+	<i><b>The evaluation display format is configurable, read section 5.5 Debugger 
+	Internals for details.<br></b></i>
+	</font>
+	<br>
+	<hr>
+	<br>
+	<b><big>5.3 Other Debug Windows</big></b><br>
+	<br>
+	There are two other debug windows, which can be shown or hidden from the 
+	&quot;Window | Debug windows&quot; Menu:<br>
+	<ul>
+	<li><b>Loaded Modules</b><br>
+	List of all loaded modules. Double click shows the 
+	selected module in an editor window.</li><br><br>
+	<li><b>Call Stack</b><br>
+	List of all called functions with parameters.</li>
+	</ul>
+	This screenshot shows both, the module window and the call stack window 
+	during a debug session, in which the function Multiply is recursively called 
+	several times.<br>
+	<br>
+	<b>Figure 5-3: Loaded Modules and Call Stack<br></b>
+	<img src="modules_callstack.gif" alt="CallStack" width=603 height=565 border=0><br>
+	<br>
+	<hr>
+	<br>
+	<b><big>5.4 Debugger Internals</big></b><br>
+	<br>
+	<b>5.4.1 The Debugger Script Template (dbTemplate.txt)<br></b>
+	There is a file named dbTemplate.txt located in your Open Perl IDE directory 
+	and created the first time, the program is started. This file is a template 
+	file for the perl5db.pl script, used by the Perl debugger - and you can 
+	modify it to customize the debug behaviour.<br>
+	<br>
+	<font color="blue">
+	<i><b>For example: Changing the sub routine ShowDerefValues will affect the hint evaluation.<br></b></i>
+	</font>
+	<br>
+	Here is a short reference of all functions used in dbTemplate.txt:<br>
+	<br>
+	<b>Table 3: Debugger script functions<br></b>
+	<table border=1>
+	  <tr><td><b>Category</b></td><td><b>Function</b></td><td><b>Description</b></td></tr>
+	  <tr><td rowspan=3 valign=top>Breakpoint handling</td><td>AddBreakpoint</td><td>Add a breakpoint</td></tr>
+	  <tr><td>DeleteBreakpoint</td><td>Delete a breakpoint</td></tr>
+	  <tr><td>ClearBreakpoints</td><td>Clear all breakpoints from a given module.</td></tr>
+	  <tr><td>CallStack handling</td><td>GetCallStack</td><td>Get Call Stack info for a given level.</td></tr>
+	  <tr><td rowspan=3 valign=top>Communication control</td><td>SendReport</td><td>Send a report from debugger script to the IDE.</td></tr>
+	  <tr><td>ReceiveRequest</td><td>Receive a request from the IDE.</td></tr>
+	  <tr><td>HandleRequest</td><td>Handle a request from the IDE.</td></tr>
+	  <tr><td rowspan=2 valign=top>Exception handling</td><td>try</td><td>Part of the try/catch scenario.</td></tr>
+	  <tr><td>catch</td><td>Part of the try/catch scenario.</td></tr>
+	  <tr><td>Finalization</td><td>END</td><td>Finalize debugger script.</td></tr>
+	  <tr><td rowspan=3 valign=top>Helper functions</td><td>IntToHex</td><td>Convert an integer value to hex representation.</td></tr>
+	  <tr><td>HexEncode</td><td>Convert (string) to (hex encoded length of string)(string)</td></tr>
+	  <tr><td>ExpandFileName</td><td>Convert a relative filename to an absolute filename.</td></tr>
+	  <tr><td>Initialization</td><td>BEGIN</td><td>Open socket connection to IDE and initialize debugger script.</td></tr>
+	  <tr><td rowspan=3 valign=top>Magic Perl debug functions</td><td>DB</td><td>This function is called for each script line to execute.</td></tr>
+	  <tr><td>sub</td><td>This function is called for each subroutine call.</td></tr>
+	  <tr><td>postponed</td><td>This function is called for each loaded module.</td></tr>
+	  <tr><td rowspan=6 valign=top>Variable evaluation</td><td>HashToStr</td><td>Get a string representation of a hash.</td></tr>
+	  <tr><td>ArrayToStr</td><td>Get a string representation of an array.</td></tr>
+	  <tr><td>ShortEval</td><td>Get a short string representation of a reference (used for watch tree evaluation).</td></tr>
+	  <tr><td>LongEval</td><td>Get a long string representation of a reference (used for watch tree evaluation).</td></tr>
+	  <tr><td>InternalEvalCode</td><td>Evaluate code</td></tr>
+	  <tr><td>ShowDerefValues</td><td>Get a string representation of a reference (used for hint evaluation).</td></tr>
+	</table>
+	<br>
+	<font color="blue">
+	<i><b>See the Open Perl IDE Software Design Specification for further information.<br></b></i>
+	</font>
+	<br><br>
+	<b>5.4.2 Message Communication Log Window</b><br>
+	<br>	
+	<b>Figure 5-4: Communication log<br></b>
+	<img src="communicationlog.gif" alt="Communication Log" width=588 height=433 border=0><br>
+	<br>
+	<hr>	
+	<table align=right>
+	<tr>
+	   <td></td>
+	   <td align=right>
+	   <small>
+	   Open Perl IDE is copyright &copy; 2001 by <a href="mailto:jguentherodt@users.sourceforge.net">J&uuml;rgen G&uuml;ntherodt</a>.
+	   </small>
+	   </td>
+	   </tr>
+    </table>
+	</td>
+</tr>
+</table>
+</center>
+
+</body>
+</html>
